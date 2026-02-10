@@ -101,4 +101,191 @@ textarea { width: 100%; border: none; resize: none; font-family: 'Courier New', 
 .red-txt label, .bold { color: #d32f2f; font-weight: bold; }
 .bg-grey { background-color: #f9f9f9; }
 
+/* === BLOQUE QTC EN COLUMNAS (FORMATO SAMU REAL - ESTILO IMAGEN) === */
+.qtc-grid {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    border: 1px solid #000;
+    margin-bottom: 10px;
+}
+
+.qtc-col {
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid #000;
+    min-height: 300px;
+}
+
+.qtc-col:last-child {
+    border-right: none;
+}
+
+.qtc-header {
+    text-align: center;
+    font-weight: bold;
+    font-size: 10px;
+    border-bottom: 1px solid #000;
+    padding: 6px 2px;
+    background: #f9f9f9;
+    text-transform: uppercase;
+}
+
+.qtc-subheader {
+    text-align: center;
+    font-weight: bold;
+    font-size: 9px;
+    padding: 4px 2px;
+    background: #f0f0f0;
+    border-bottom: 1px solid #ddd;
+}
+
+.qtc-col input {
+    border: none;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+    font-size: 13px;
+    padding: 8px 2px;
+    background: transparent;
+    height: 28px;
+    box-sizing: border-box;
+}
+
+.qtc-col input:last-child {
+    border-bottom: none;
+}
+
+/* Última columna (QTR/DESP) tiene más filas */
+.qtc-col:last-child {
+    grid-row: span 12;
+}
+
+.qtc-col:last-child input {
+    height: 24px;
+    padding: 5px 2px;
+}
+
+/* RESPONSIVE para móviles */
+@media (max-width: 700px) {
+    .qtc-grid {
+        grid-template-columns: repeat(4, 1fr);
+        overflow-x: auto;
+    }
+    
+    .qtc-col {
+        min-width: 80px;
+    }
+}
+
+/* === LAYOUT PRINCIPAL CON SIDEBAR DERECHO === */
+.principal-grid {
+    display: grid;
+    grid-template-columns: 1fr 210px;
+    gap: 12px;
+    align-items: start;
+}
+.print-mode .principal-grid {
+    grid-template-columns: 1fr 210px;
+}
+
+.right-sidebar {
+    width: 210px;
+    padding: 0;
+    border: none;
+}
+@media print {
+    .right-sidebar { width: 210px; }
+}
+
+/* Paneles QTC/QTR con borde y ajuste de separación */
+.qtc-panel, .qtr-panel {
+    border: none;
+    margin-bottom: 10px;
+    padding: 0;
+}
+.qtc-panel .section-title.compact, .qtr-panel .section-title.compact {
+    margin: 0;
+    background: #e0e0e0;
+    border: 1px solid #000;
+    border-bottom: none;
+    padding: 4px 10px;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+/* QTC table */
+.qtc-table .grid-row.two-col {
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    gap: 0;
+    margin-bottom: 0;
+}
+.qtc-table .grid-row.four-col {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+}
+.qtc-table .cell {
+    border: 1px solid #000;
+    border-top: none;
+    border-left: none;
+    background: #f9f9f9;
+    padding: 4px;
+    min-height: 28px;
+    display: flex;
+    align-items: center;
+}
+.qtc-table label {
+    font-weight: 600;
+    font-size: 9px;
+    text-transform: uppercase;
+}
+.qtc-table input {
+    width: 100%;
+    background: transparent;
+    border: none;
+    color: #000;
+    font-size: 14px;
+}
+
+/* QTR table: igual estilo que QTC */
+.qtr-table {
+    margin-top: 8px;
+}
+.qtr-table .grid-row {
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    gap: 0;
+    margin-bottom: 0;
+}
+.qtr-table .cell {
+    border: 1px solid #000;
+    border-top: none;
+    background: #f9f9f9;
+    padding: 3px;
+    min-height: 24px;
+    display: flex;
+    align-items: center;
+}
+.qtr-table label {
+    font-weight: 600;
+    font-size: 9px;
+    text-transform: uppercase;
+}
+.qtr-table input {
+    width: 100%;
+    background: transparent;
+    border: none;
+    color: #000;
+    font-size: 14px;
+}
+
+/* Eliminar estilos duplicados y conflictivos */
+.qtc-grid, .qtc-col, .qtc-header {
+    display: none !important;
+}
+.accidente .grid-row .cell.full{display:flex;align-items:center;gap:12px}
+.inline-radio{margin-left:8px}
+.accidente-grid input[type="radio"], .accidente-grid input[type="checkbox"], .antecedentes-grid input[type="checkbox"], .motivo-controles input[type="checkbox"] { width: 14px; height: 14px; accent-color: #d32f2f; }
+.red-txt label, .bold { color: #d32f2f; font-weight: bold; }
+.bg-grey { background-color: #f9f9f9; }
 

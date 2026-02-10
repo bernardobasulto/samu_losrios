@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -25,98 +26,153 @@
         </div>
     </header>
 
-    <div class="table-section">
-        <div class="grid-row">
-            <div class="cell"><label>FECHA</label><input type="date"></div>
-            <div class="cell"><label>COMUNA :</label><input type="text"></div>
-            <div class="cell"><label>Fono :</label><input type="text" id="qtc" class="bold"></div>
-        </div>
-        <div class="grid-row">
-            <div class="cell"><label>SOLICITANTE :</label><input type="text"></div>
-            <div class="cell"><label>CLAVE :</label><input type="text"></div>
-        </div>
-        <div class="grid-row bg-grey">
-            <div class="cell"><label>QTC :</label><input type="text"></div>
-            <div class="cell"><label>CLAVE :</label><input type="text"></div>
-            <div class="cell"><label>CBD :</label><input type="text"></div>
-            <div class="cell"><label>MOVIL :</label><input type="text"></div>
-        </div>
-        <div class="grid-row bg-grey">
-            <div class="cell"><label>M0 :</label><input type="text"></div>
-            <div class="cell"><label>M1 :</label><input type="text"></div>
-            <div class="cell"><label>M2 :</label><input type="text"></div>
-            <div class="cell"><label>M3 :</label><input type="text"></div>
-        </div>
-        <div class="grid-row bg-grey">
-            <div class="cell"><label>DESP :</label><input type="text"></div>
-            <div class="cell"><label>600 :</label><input type="text"></div>
-            <div class="cell"><label>602 :</label><input type="text"></div>
-            <div class="cell"><label>603 :</label><input type="text"></div>
-            <div class="cell"><label>604 :</label><input type="text"></div>
-            <div class="cell"><label>605 :</label><input type="text"></div>
-            <div class="cell"><label>606 :</label><input type="text"></div>
-            <div class="cell"><label>609 :</label><input type="text"></div>
-            <div class="cell"><label>610 :</label><input type="text"></div>
-            <div class="cell"><label>613 :</label><input type="text"></div>
-            <div class="cell"><label> </label><input type="text"></div>
-            
-        </div>
-    </div>
-
-
-    <div class="section-title">MOTIVO DE CONSULTA</div>
-    <div class="table-section motivo-grid">
-        <div class="motivo-izquierda">
-            <div class="motivo-controles">
-                <label class="inline-check"><input type="checkbox"> respira</label>
-                <label class="inline-check"><input type="checkbox"> consciente</label>
+    <div class="top-info">
+        <div class="table-section">
+            <div class="grid-row">
+                <div class="cell"><label>FECHA</label><input type="date"></div>
+                <div class="cell"><label>COMUNA :</label><input type="text"></div>
+                <div class="cell"><label>Fono :</label><input type="text" id="fono" class="bold"></div>
             </div>
-            <textarea class="motivo-textarea" rows="12"></textarea>
-        </div>
-        <div class="antecedentes-panel">
-            <div class="panel-header">ANTECEDENTES:</div>
-            <div class="antecedentes-grid">
-                <div class="item"><label class="inline-check"><input type="checkbox"> DM</label></div>
-                <div class="item"><label class="inline-check"><input type="checkbox"> HTA</label></div>
-                <div class="item"><label class="inline-check"><input type="checkbox"> ACV</label></div>
-                <div class="item"><label class="inline-check"><input type="checkbox"> IAM</label></div>
-                <div class="item"><label class="inline-check"><input type="checkbox"> ASMA</label></div>
-                <div class="item"><label class="inline-check"><input type="checkbox"> Cardiopatía</label></div>
-                <div class="item"><label class="inline-check"><input type="checkbox"> EPI</label></div>
-                <div class="item"><label class="inline-check"><input type="checkbox"> EQZ</label></div>
-                <div class="item"><label class="inline-check"><input type="checkbox"> ER</label></div>
-                <div class="item"><label class="inline-check"><input type="checkbox"> Postrado</label></div>
-                <div class="item"><label class="inline-check"><input type="checkbox"> Demencia</label></div>
-                <div class="item"><label class="inline-check"><input type="checkbox"> Parkinson</label></div>
-            </div>
-            <div class="antecedentes-extra">
-                <div class="row-full"><label>OTRO:</label><input type="text"></div>
-                <div class="row-full"><label>Alergias:</label><input type="text"></div>
+            <div class="grid-row">
+                <div class="cell"><label>SOLICITANTE :</label><input type="text"></div>
+                
             </div>
         </div>
     </div>
 
-    <div class="section-title">DATOS DEL PACIENTE</div>
-    <div class="table-section">
-        <div class="grid-row">
-            <div class="cell span-2"><label>NOMBRE COMPLETO</label><input type="text"></div>
-            <div class="cell"><label>RUN</label><input type="text"></div>
-        </div>
-        <div class="grid-row">
-            <div class="cell"><label>EDAD</label><input type="number"></div>
-            <div class="cell"><label>SEXO (M/F)</label><input type="text"></div>
-            <div class="cell"><label>PREVISIÓN</label><input type="text"></div>
-            <div class="cell"><label>DAU</label><input type="text"></div>
-        </div>
-    </div>
+    <div class="principal-grid">
+        <div class="main-left">
+            <div class="section-title">MOTIVO DE CONSULTA</div>
+            <div class="table-section motivo-grid">
+                <div class="motivo-izquierda">
+                    <div class="motivo-controles">
+                        <label class="inline-check"><input type="checkbox"> respira</label>
+                        <label class="inline-check"><input type="checkbox"> consciente</label>
+                    </div>
+                    <textarea class="motivo-textarea" rows="12"></textarea>
+                </div>
+                <div class="antecedentes-panel">
+                    <div class="panel-header">ANTECEDENTES:</div>
+                    <div class="antecedentes-grid">
+                        <div class="item"><label class="inline-check"><input type="checkbox"> DM</label></div>
+                        <div class="item"><label class="inline-check"><input type="checkbox"> HTA</label></div>
+                        <div class="item"><label class="inline-check"><input type="checkbox"> ACV</label></div>
+                        <div class="item"><label class="inline-check"><input type="checkbox"> IAM</label></div>
+                        <div class="item"><label class="inline-check"><input type="checkbox"> ASMA</label></div>
+                        <div class="item"><label class="inline-check"><input type="checkbox"> Cardiopatía</label></div>
+                        <div class="item"><label class="inline-check"><input type="checkbox"> EPI</label></div>
+                        <div class="item"><label class="inline-check"><input type="checkbox"> EQZ</label></div>
+                        <div class="item"><label class="inline-check"><input type="checkbox"> ER</label></div>
+                        <div class="item"><label class="inline-check"><input type="checkbox"> Postrado</label></div>
+                        <div class="item"><label class="inline-check"><input type="checkbox"> Demencia</label></div>
+                        <div class="item"><label class="inline-check"><input type="checkbox"> Parkinson</label></div>
+                    </div>
+                    <div class="antecedentes-extra">
+                        <div class="row-full"><label>OTRO:</label><input type="text"></div>
+                        <div class="row-full"><label>Alergias:</label><input type="text"></div>
+                    </div>
+                </div>
+            </div>
 
-    <div class="section-title">ACCIDENTE</div>
-    <div class="table-section accidente-grid">
-        <div class="grid-row">
-            <div class="cell"><label class="inline-check"><input type="radio" name="accidente_tipo"> TRANSITO</label></div>
-            <div class="cell"><label class="inline-check"><input type="radio" name="accidente_tipo"> LABORAL</label></div>
-            <div class="cell"><label class="inline-check"><input type="radio" name="accidente_tipo"> ESCOLAR</label></div>
+            <div class="section-title">DATOS DEL PACIENTE</div>
+            <div class="table-section">
+                <div class="grid-row">
+                    <div class="cell span-2"><label>NOMBRE COMPLETO</label><input type="text"></div>
+                    <div class="cell"><label>RUN</label><input type="text"></div>
+                </div>
+                <div class="grid-row">
+                    <div class="cell"><label>EDAD</label><input type="number"></div>
+                    <div class="cell"><label>SEXO (M/F)</label><input type="text"></div>
+                    <div class="cell"><label>PREVISIÓN</label><input type="text"></div>
+                    <div class="cell"><label>DAU</label><input type="text"></div>
+                </div>
+            </div>
+
+            <div class="section-title">ACCIDENTE</div>
+            <div class="table-section accidente-grid">
+                <div class="grid-row">
+                    <div class="cell"><label class="inline-check"><input type="radio" name="accidente_tipo"> TRANSITO</label></div>
+                    <div class="cell"><label class="inline-check"><input type="radio" name="accidente_tipo"> LABORAL</label></div>
+                    <div class="cell"><label class="inline-check"><input type="radio" name="accidente_tipo"> ESCOLAR</label></div>
+                </div>
+            </div>
         </div>
+
+        <aside class="right-sidebar">
+            <div class="qtc-panel">
+                
+                <div class="table-section qtc-table">
+                    <div class="grid-row two-col">
+                        <div class="cell"><label>QTC</label></div>
+                        <div class="cell"><input type="text"></div>
+                    </div>
+                    <div class="grid-row two-col">
+                        <div class="cell"><label>CLAVE</label></div>
+                        <div class="cell"><input type="text"></div>
+                    </div>
+                    <div class="grid-row two-col">
+                        <div class="cell"><label>CBD</label></div>
+                        <div class="cell"><input type="text"></div>
+                    </div>
+                    <div class="grid-row two-col">
+                        <div class="cell"><label>MÓVIL</label></div>
+                        <div class="cell"><input type="text"></div>
+                    </div>
+                    <div class="grid-row four-col">
+                        <div class="cell"><label>MO</label><input type="text"></div>
+                        <div class="cell"><label>M1</label><input type="text"></div>
+                        <div class="cell"><label>M2</label><input type="text"></div>
+                        <div class="cell"><label>M3</label><input type="text"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="qtr-panel">
+                <div class="section-title compact">QTR</div>
+                <div class="table-section qtr-table">
+                    <div class="grid-row">
+                        <div class="cell"><label>DESP</label></div>
+                        <div class="cell"><input type="text"></div>
+                    </div>
+                    <div class="grid-row">
+                        <div class="cell"><label>600</label></div>
+                        <div class="cell"><input type="text"></div>
+                    </div>
+                    <div class="grid-row">
+                        <div class="cell"><label>602</label></div>
+                        <div class="cell"><input type="text"></div>
+                    </div>
+                    <div class="grid-row">
+                        <div class="cell"><label>608</label></div>
+                        <div class="cell"><input type="text"></div>
+                    </div>
+                    <div class="grid-row">
+                        <div class="cell"><label>604</label></div>
+                        <div class="cell"><input type="text"></div>
+                    </div>
+                    <div class="grid-row">
+                        <div class="cell"><label>605</label></div>
+                        <div class="cell"><input type="text"></div>
+                    </div>
+                    <div class="grid-row">
+                        <div class="cell"><label>606</label></div>
+                        <div class="cell"><input type="text"></div>
+                    </div>
+                    <div class="grid-row">
+                        <div class="cell"><label>609</label></div>
+                        <div class="cell"><input type="text"></div>
+                    </div>
+                    <div class="grid-row">
+                        <div class="cell"><label>610</label></div>
+                        <div class="cell"><input type="text"></div>
+                    </div>
+                    <div class="grid-row">
+                        <div class="cell"><label>613</label></div>
+                        <div class="cell"><input type="text"></div>
+                    </div>
+                </div>
+            </div>
+        </aside>
     </div>
 
     <div class="section-title">SIGNOS VITALES (SV)</div>
