@@ -1,0 +1,104 @@
+body { background: #4a4a4a; font-family: Arial, sans-serif; margin: 0; padding: 10px; display: flex; flex-direction: column; align-items: center; }
+
+/* Botón flotante para terreno */
+.floating-bar { width: 100%; max-width: 800px; position: sticky; top: 0; z-index: 1000; padding: 10px 0; }
+button { width: 100%; padding: 16px; background: #d32f2f; color: white; border: none; border-radius: 8px; font-weight: bold; font-size: 16px; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
+
+/* Hoja A4 */
+.document-container { 
+    background: white; 
+    width: 100%; 
+    max-width: 800px; 
+    padding: 20px; 
+    box-sizing: border-box; 
+    box-shadow: 0 0 20px rgba(0,0,0,0.2);
+}
+
+.main-header { display: flex; border: 1px solid #000; margin-bottom: 5px; }
+.logo-area { padding: 8px; border-right: 1px solid #000; display: flex; align-items: center; }
+.logo-area img { width: 55px; }
+.title-area { flex: 1; text-align: center; }
+.title-area h1 { font-size: 14px; margin: 5px 0; }
+.title-area h2 { font-size: 12px; margin: 0; color: #333; }
+
+.section-title { background: #e0e0e0; border: 1px solid #000; border-bottom: none; padding: 4px 10px; font-size: 11px; font-weight: bold; margin-top: 8px; }
+.table-section { border: 1px solid #000; }
+
+.grid-row { display: flex; border-bottom: 1px solid #000; }
+.grid-row:last-child { border-bottom: none; }
+.cell { flex: 1; padding: 5px; border-right: 1px solid #000; }
+.cell:last-child { border-right: none; }
+.span-2 { flex: 2; }
+
+label { display: block; font-size: 9px; font-weight: bold; margin-bottom: 2px; text-transform: uppercase; }
+input { width: 100%; border: none; outline: none; font-size: 14px; padding: 2px 0; background: transparent; }
+textarea { width: 100%; border: none; resize: none; font-family: 'Courier New', monospace; font-size: 13px; padding: 10px; box-sizing: border-box; line-height: 1.4; }
+
+.checkbox-grid { display: grid; grid-template-columns: 1fr; grid-auto-rows: auto; padding: 10px; gap: 8px; }
+.sv-grid { display: grid; grid-template-columns: repeat(4, 1fr); }
+
+.full-row { grid-column: 1 / -1; border-top: 1px solid #ccc; padding-top: 5px; margin-top: 5px; }
+.red-txt label, .bold { color: #d32f2f; font-weight: bold; }
+.bg-grey { background-color: #f9f9f9; }
+
+/* Responsive para Tablets */
+@media (min-width: 600px) {
+    .checkbox-grid { grid-template-columns: 2fr 1fr 1fr; }
+    .sv-grid { grid-template-columns: repeat(8, 1fr); }
+}
+
+/* Forzado de resolución para PDF */
+.print-mode { width: 210mm !important; max-width: none !important; }
+
+/* Layout específico: principal a la izquierda y laterales lado a lado */
+.checkbox-grid .cell-principal { grid-column: 1; }
+
+/* Alineación y estilo de los checkboxes */
+.checkbox-grid label { display: inline-flex; align-items: center; gap: 6px; margin-right: 10px; margin-bottom: 6px; }
+.checkbox-grid input[type="checkbox"] { width: 14px; height: 14px; accent-color: #d32f2f; }
+.red-txt label, .bold { color: #d32f2f; font-weight: bold; }
+.bg-grey { background-color: #f9f9f9; }
+
+/* Estilo y responsividad para sección ACCIDENTE */
+.accidente-grid .grid-row { flex-wrap: wrap; }
+.accidente-grid label.inline-check { display: inline-flex; align-items: center; gap: 6px; }
+.accidente-grid input[type="checkbox"] { width: 14px; height: 14px; accent-color: #d32f2f; }
+.red-txt label, .bold { color: #d32f2f; font-weight: bold; }
+.bg-grey { background-color: #f9f9f9; }
+
+/* Limpieza de duplicados del bloque responsivo y regla antigua */
+
+
+
+/* Motivo de Consulta: layout */
+.motivo-grid { display: grid; grid-template-columns: 1fr; gap: 8px; padding: 10px; }
+@media (min-width: 600px) { .motivo-grid { grid-template-columns: 2fr 1fr; } }
+
+.motivo-controles { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 8px; }
+.motivo-controles label { display: flex; align-items: center; justify-content: center; border: 1px solid #000; padding: 6px; font-size: 11px; font-weight: bold; background: #fff; text-transform: none; }
+
+.motivo-textarea { width: 100%; border: none; resize: none; font-family: 'Courier New', monospace; font-size: 12px; padding: 8px; box-sizing: border-box; line-height: 20px; background-image: repeating-linear-gradient( to bottom, transparent 0, transparent 18px, #7a7a7a 19px ); background-size: 100% 20px; min-height: 180px; }
+
+/* Panel de antecedentes derecho */
+.antecedentes-panel { padding: 8px; }
+.panel-header { font-size: 10px; font-weight: bold; margin-bottom: 6px; }
+.antecedentes-grid { display: grid; grid-template-columns: 1fr 1fr; border: 1px solid #000; }
+.antecedentes-grid .item { padding: 6px; border-right: 1px solid #000; border-bottom: 1px solid #000; }
+.antecedentes-grid .item:nth-child(2n) { border-right: none; }
+.antecedentes-grid .item:nth-last-child(-n+2) { border-bottom: none; }
+
+.antecedentes-extra .row-full { display: grid; grid-template-columns: 60px 1fr; align-items: center; border: 1px solid #000; border-top: none; padding: 6px; }
+.antecedentes-extra .row-full + .row-full { border-top: 1px solid #000; }
+
+/* Radios/checkboxes alineados */
+.inline-check { display: inline-flex; align-items: center; gap: 6px; }
+.accidente-grid input[type="radio"], .accidente-grid input[type="checkbox"], .antecedentes-grid input[type="checkbox"], .motivo-controles input[type="checkbox"] { width: 14px; height: 14px; accent-color: #d32f2f; }
+
+/* Tabla QTC dos columnas */
+.qtc-table .grid-row .cell:first-child { flex: 0 0 35%; }
+.qtc-table .grid-row .cell:last-child { flex: 1; }
+.qtc-table .grid-row.m-row .cell { flex: 1; }
+.red-txt label, .bold { color: #d32f2f; font-weight: bold; }
+.bg-grey { background-color: #f9f9f9; }
+
+

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro SAMU Los Ríos</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</head>
+<body>
+
+<div id="ficha-medica" class="container">
+    <div class="header-table">
+        <div class="header-logo">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2j6C4oZlsMt2ojCZ52z5eDX7d4DA5315W5w&s" alt="Logo SAMU">
+            <h2>REGISTRO DE ATENCIÓN PREHOSPITALARIA <br> SAMU LOS RÍOS</h2>
+        </div>
+        <div class="header-logistica">
+            <div class="row">
+                <div class="col">Fecha: <input type="date" id="fecha"></div>
+                <div class="col">Comuna: <input type="text" id="comuna"></div>
+            </div>
+            <div class="row">
+                <div class="col">Fono: <input type="text" id="fono"></div>
+                <div class="col">Móvil: <input type="text" id="movil"></div>
+            </div>
+            <div class="row">
+                <div class="col red-label">QTC: <input type="text" id="qtc" class="red-border"></div>
+                <div class="col">Clave: <input type="text" id="clave"></div>
+            </div>
+        </div>
+    </div>
+
+    <section>
+        <div class="section-title">DATOS DEL PACIENTE</div>
+        <div class="table-container">
+            <div class="row">
+                <div class="col-6">Nombre: <input type="text" id="nombre"></div>
+                <div class="col-3">Edad: <input type="number" id="edad"></div>
+                <div class="col-3">RUN: <input type="text" id="run"></div>
+            </div>
+            <div class="row">
+                <div class="col-3">Sexo: 
+                    <label><input type="radio" name="sexo" value="M"> M</label>
+                    <label><input type="radio" name="sexo" value="F"> F</label>
+                </div>
+                <div class="col-3">Previsión: <input type="text" id="prevision"></div>
+                <div class="col-3">DAU: <input type="text" id="dau"></div>
+                <div class="col-3">Accidente: 
+                    <select id="tipo_accidente">
+                        <option value="">N/A</option>
+                        <option value="Tránsito">Tránsito</option>
+                        <option value="Laboral">Laboral</option>
+                        <option value="Escolar">Escolar</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="section-title">ANTECEDENTES</div>
+        <div class="checkbox-grid">
+            <label><input type="checkbox" id="dm"> DM</label>
+            <label><input type="checkbox" id="hta"> HTA</label>
+            <label><input type="checkbox" id="acv"> ACV</label>
+            <label><input type="checkbox" id="iam"> IAM</label>
+            <label><input type="checkbox" id="asma"> ASMA</label>
+            <label><input type="checkbox" id="epi"> EPI</label>
+            <label><input type="checkbox" id="er"> ER</label>
+            <label><input type="checkbox" id="parkinson"> Parkinson</label>
+            <label><input type="checkbox" id="m1"> M1</label>
+            <label><input type="checkbox" id="m2"> M2</label>
+            <label><input type="checkbox" id="m3"> M3</label>
+            <label><input type="checkbox" id="postrado"> Postrado</label>
+            <div class="col-span-full">Otros/Alergias: <input type="text" id="otros_antecedentes" class="full-width"></div>
+        </div>
+    </section>
+
+    <section>
+        <div class="section-title">SIGNOS VITALES (SV)</div>
+        <div class="sv-grid">
+            <div class="sv-item">FR: <input type="text" id="fr"></div>
+            <div class="sv-item">FC: <input type="text" id="fc"></div>
+            <div class="sv-item">P/A: <input type="text" id="pa"></div>
+            <div class="sv-item">PAM: <input type="text" id="pam"></div>
+            <div class="sv-item">GSW: <input type="text" id="gsw"></div>
+            <div class="sv-item">SAT: <input type="text" id="sat"></div>
+            <div class="sv-item">HGT: <input type="text" id="hgt"></div>
+            <div class="sv-item">T°: <input type="text" id="temp"></div>
+        </div>
+    </section>
+
+    <section>
+        <div class="section-title">INFORME DE ATENCIÓN E INTERVENCIÓN</div>
+        <textarea id="informe" rows="8"></textarea>
+    </section>
+
+    <section>
+        <div class="section-title">CIERRE Y TRASLADO</div>
+        <div class="table-container">
+            <div class="row">
+                <div class="col-4">Destino: <input type="text" id="destino" placeholder="Hospital/SAR/SAPU"></div>
+                <div class="col-4">Aviso Policial: 
+                    <label><input type="radio" name="policia" value="SI"> SI</label>
+                    <label><input type="radio" name="policia" value="NO"> NO</label>
+                </div>
+                <div class="col-4">Hora Fallecimiento: <input type="time" id="hora_fallecido"></div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <label><input type="checkbox" id="rechaza"> PACIENTE RECHAZA TRASLADO / TRATAMIENTO</label>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<div class="no-print actions">
+    <button onclick="generarPDF()" id="btnPDF">GENERAR PDF MÉDICO LEGAL</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

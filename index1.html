@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro SAMU Los Ríos</title>
+
+  <link rel="stylesheet" href="style2.css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</head>
+<body>
+
+<div class="no-print floating-bar">
+  <button onclick="generarPDF()" id="btnPDF">📄 GENERAR PDF</button>
+</div>
+
+<div id="ficha-legal" class="document-container">
+
+<header class="main-header">
+  <div class="logo-area">
+    <img src="logo.png" alt="Logo">
+  </div>
+  <div class="title-area">
+    <h1>REGISTRO DE ATENCIÓN PREHOSPITALARIA</h1>
+    <h2>SAMU LOS RÍOS</h2>
+  </div>
+</header>
+
+<section class="block">
+  <div class="row">
+    <div class="cell"><label>FECHA</label><input type="date"></div>
+    <div class="cell"><label>COMUNA</label><input></div>
+    <div class="cell"><label>FONO</label><input></div>
+  </div>
+</section>
+
+<section class="block">
+  <h3>ANTECEDENTES</h3>
+  <div class="checkbox-grid">
+    <label><input type="checkbox"> DM</label>
+    <label><input type="checkbox"> HTA</label>
+    <label><input type="checkbox"> ACV</label>
+    <label><input type="checkbox"> IAM</label>
+    <label><input type="checkbox"> ASMA</label>
+    <label><input type="checkbox"> CARDIOPATÍA</label>
+    <label><input type="checkbox"> POSTRADO</label>
+    <label><input type="checkbox"> DEMENCIA</label>
+    <div class="full">
+      <label>OTROS / ALERGIAS</label>
+      <input>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <h3>INFORME DE ATENCIÓN</h3>
+  <textarea rows="12"></textarea>
+</section>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
